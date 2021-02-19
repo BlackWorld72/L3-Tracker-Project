@@ -10011,7 +10011,7 @@ body {
 .container-md,
 .container-lg,
 .container-xl {
-  padding-left: 1.5rem;
+  padding-left: 19rem;
   padding-right: 1.5rem;
 }
 
@@ -10089,7 +10089,7 @@ body {
   z-index: 1039;
 }
 .sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
-  width: 225px;
+  width: 500px;
   height: 100vh;
   z-index: 1038;
 }
@@ -10246,4 +10246,22 @@ body {
 }
 .sb-sidenav-light .sb-sidenav-footer {
   background-color: #e9ecef;
+}
+
+#usernameChoose {
+  width: 500px;
+}
+
+.home-select {
+  display: inline-block;
+  cursor: pointer;
+  width: 80px;
+  height: 50px;
+  border: 0;
+  background-color: #e4e4e4;
+  color: #686c72;
+  font-size: 14px;
+  font-weight: 700;
+  text-align-last: center;
+  border-radius: 5px 5px 5px 5px;
 }

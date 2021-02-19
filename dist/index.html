@@ -17,9 +17,23 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Nom d'utilisateur..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <input class="form-control" type="text" id="usernameChoose" placeholder="Nom d'utilisateur..." aria-label="Search" aria-describedby="basic-addon2" />
                 </div>
             </form>
+            <select class="home-select search-select">
+                <option value="world">Monde</option>
+                <option value="br">BR</option>
+                <option value="eune">EUNE</option>
+                <option value="euw">EUW</option>
+                <option value="jp">JP</option>
+                <option value="kr">KR</option>
+                <option value="lan">LAN</option>
+                <option value="las">LAS</option>
+                <option value="na">NA</option>
+                <option value="oce">OCE</option>
+                <option value="tr">TR</option>
+                <option value="ru">RU</option>
+            </select>
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
@@ -33,10 +47,7 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid">
-                        <ol class="breadcrumb mb-4">
-                            <input class="breadcrumb-item active">Dashboard</li>
-                        </ol>
+                    <div class="container-fluid">   
                         <div class="card mb-4">
                             <div class="card-header">
                                 Rotation de champion
@@ -46,7 +57,7 @@
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     </table>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </main>
