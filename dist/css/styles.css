@@ -10265,3 +10265,7 @@ body {
   text-align-last: center;
   border-radius: 5px 5px 5px 5px;
 }
+
+#rotation-character {
+  top: 650px;
+}
