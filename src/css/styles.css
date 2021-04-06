@@ -60,7 +60,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: 'Spiegel-Regular', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -10256,7 +10256,7 @@ body {
   display: inline-block;
   cursor: pointer;
   width: 80px;
-  height: 50px;
+  height: 40px;
   border: 0;
   background-color: #e4e4e4;
   color: #686c72;
@@ -10267,10 +10267,83 @@ body {
 }
 
 #rotation-character {
-  top: 650px;
+  position: fixed;
+  bottom: 50px;
 }
 
 #header-tweets {
   font-size: 14px;
   text-align: center;
+}
+
+.fa {
+  display: inline-block;
+  font: normal;
+  font-size: inherit;
+}
+
+.search-link {
+  position: relative;
+  line-height: 40px;
+  width: 80px;
+  text-decoration: none;
+  background: #1f6fba;
+  color: #fff;
+  float: right;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 15px;
+}
+
+#logo {
+  width: 60px;
+  margin-left: 10px;
+}
+
+#title {
+  font-family: dnFont;
+  font-size: 32px;
+}
+
+#layoutSidenav_content {
+  background-image: url("https://images4.alphacoders.com/600/thumb-1920-600528.png");
+}
+
+#barreRecherche {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #212529;
+}
+
+#elemBarreRecherche {
+  margin: 25px;
+}
+
+#infoCompte {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  top: 180px;
+  background-color: #999b9c;
+  border-radius: 30px;
+}
+
+@font-face {
+  font-family: dnFont;
+  src: url(../CloisterBlack.ttf);
+}
+
+@media (max-width: 1000px) {
+  #layoutSidenav_nav {
+    visibility: hidden;
+  }
+  #rotation-character {
+    visibility: hidden;
+  }
 }

@@ -10256,7 +10256,7 @@ body {
   display: inline-block;
   cursor: pointer;
   width: 80px;
-  height: 50px;
+  height: 40px;
   border: 0;
   background-color: #e4e4e4;
   color: #686c72;
@@ -10267,10 +10267,30 @@ body {
 }
 
 #rotation-character {
-  top: 650px;
+  top: 500px;
 }
 
 #header-tweets {
   font-size: 14px;
   text-align: center;
+}
+
+.fa {
+  display: inline-block;
+  font: normal;
+  font-size: inherit;
+}
+
+.search-link {
+  position: relative;
+  line-height: 40px;
+  width: 80px;
+  text-decoration: none;
+  background: #1f6fba;
+  color: #fff;
+  float: right;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px;
+  margin-left: 15px;
 }

@@ -1,0 +1,56 @@
+<div id="barreRecherche">
+    <div id="elemBarreRecherche">
+        <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input (keyup.enter)="doNothing()" (keyup)="onKey($event)" class="form-control" type="text" id="usernameChoose" placeholder="Nom d'utilisateur..." aria-label="Search" aria-describedby="basic-addon2" />
+            </div>
+        </form>
+        <select class="home-select search-select" (change)="onRegionChange($event)">
+            <option value="world">Monde</option>
+            <option value="br1">BR</option>
+            <option value="eune1">EUNE</option>
+            <option value="euw1">EUW</option>
+            <option value="jp1">JP</option>
+            <option value="kr">KR</option>
+            <option value="la1">LAN</option>
+            <option value="la2">LAS</option>
+            <option value="na1">NA</option>
+            <option value="oc1">OCE</option>
+            <option value="tr1">TR</option>
+            <option value="ru">RU</option>
+        </select>
+        <button (click)="getUserInfos();" class="search-link"><fa-icon [icon]="faSearch"></fa-icon></button>
+    </div>
+</div>
+<div *ngIf="hasRank" style="background-color: #999b9c;" id="infoCompte">
+    <div style="display: inline-block;">
+        <div style="margin-left: 10px; float:left; text-align: center;">
+            <img style="width: 200px;" src="/assets/{{rank.tier}}.png"/>
+            <h2>{{rank.tier}} {{rank.rank}}</h2>
+            <h2>{{rank.leaguePoints}} LP</h2>
+        </div>
+        <div style="margin-left: -10px; margin-top: 20px; float: right; text-align: center; background-color: #fff; border-radius: 10px;">
+            <img style="margin-top: 8px; width: 100px;" src="{{userIcon}}"/>
+            <h4 style="margin-left: 4px; margin-right: 4px;">Niveau : {{niveau}}</h4>
+        </div>
+        <div style="margin-left: 40px; margin-top: 40px; float: right; text-align: left;">
+            <h2>{{username}}</h2>
+            <h3>Victoire : {{rank.wins}}</h3>
+            <h3>Defaite : {{rank.losses}}</h3>
+            <h3>Ratio victoires : {{rankRatio}}%</h3>
+            <h3>Lane favorite : </h3>
+            <h3>Score moyen : </h3>
+        </div>
+        
+    </div>
+</div>
+<div class="card mb-4" id="rotation-character">
+    <div class="card-header">
+        Rotation de champion
+    </div>
+    <div class="card-body">
+        <div *ngFor="let champ of rota.freeChampionIds" style="display: inline; margin-left: 17px;">
+            <img style="margin-top: 10px; width: 70px;" [src]="getChampionImage(champ)" [alt]="getChampionNom(champ)" />
+        </div>
+    </div> 
+</div>
