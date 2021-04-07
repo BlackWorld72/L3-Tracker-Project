@@ -2,7 +2,7 @@
     <div id="elemBarreRecherche">
         <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
             <div class="input-group">
-                <input (keyup.enter)="doNothing()" (keyup)="onKey($event)" class="form-control" type="text" id="usernameChoose" placeholder="Nom d'utilisateur..." aria-label="Search" aria-describedby="basic-addon2" />
+                <input (keyup)="onKey($event)" class="form-control" type="text" id="usernameChoose" placeholder="Nom d'utilisateur..." aria-label="Search" aria-describedby="basic-addon2" />
             </div>
         </form>
         <select class="home-select search-select" (change)="onRegionChange($event)">
@@ -22,26 +22,42 @@
         <button (click)="getUserInfos();" class="search-link"><fa-icon [icon]="faSearch"></fa-icon></button>
     </div>
 </div>
-<div *ngIf="hasRank" style="background-color: #999b9c;" id="infoCompte">
+<div *ngIf="hasRank" style="background-color: #212529; color: #e4e4e4;" id="infoCompte">
     <div style="display: inline-block;">
         <div style="margin-left: 10px; float:left; text-align: center;">
-            <img style="width: 200px;" src="/assets/{{rank.tier}}.png"/>
-            <h2>{{rank.tier}} {{rank.rank}}</h2>
-            <h2>{{rank.leaguePoints}} LP</h2>
+            <img style="width: 180px;" src="/assets/{{rank.tier}}.png"/>
+            <h3>{{rank.tier}} {{rank.rank}}</h3>
+            <h3>{{rank.leaguePoints}} LP</h3>
         </div>
-        <div style="margin-left: -10px; margin-top: 20px; float: right; text-align: center; background-color: #fff; border-radius: 10px;">
+        <div style="margin-left: -10px; margin-top: 20px; float: right; text-align: center;  border-radius: 10px;">
             <img style="margin-top: 8px; width: 100px;" src="{{userIcon}}"/>
             <h4 style="margin-left: 4px; margin-right: 4px;">Niveau : {{niveau}}</h4>
         </div>
-        <div style="margin-left: 40px; margin-top: 40px; float: right; text-align: left;">
-            <h2>{{username}}</h2>
-            <h3>Victoire : {{rank.wins}}</h3>
-            <h3>Defaite : {{rank.losses}}</h3>
-            <h3>Ratio victoires : {{rankRatio}}%</h3>
-            <h3>Lane favorite : </h3>
-            <h3>Score moyen : </h3>
+        <div style="margin-left: 25px; margin-top: 40px; float: left; text-align: left;">
+            <h3>{{name}}</h3>
+            <h4>Victoire : {{rank.wins}}</h4>
+            <h4>Defaite : {{rank.losses}}</h4>
+            <h4>Ratio victoires : {{rankRatio}}%</h4>
+            <h4>Lane favorite : {{lanePrefere}}</h4>
+            <h4>Score moyen : {{kill}} / {{death}} / {{assist}}</h4>
+        </div> 
+    </div>
+</div>
+<div *ngIf="isUnrank" style="background-color: #212529; color: #e4e4e4;" id="infoCompte">
+    <div style="display: inline-block;">
+        <div style="margin-left: 10px; float:left; text-align: center;">
+            <img style="width: 180px;" src="/assets/UNRANKED.png"/>
         </div>
-        
+        <div style="margin-left:30px; margin-top: 20px; float: right; text-align: center; border-radius: 10px;">
+            <img style="margin-top: 8px; width: 100px;" src="{{userIcon}}"/>
+            <h4 style="margin-left: 4px; margin-right: 4px; margin-top: 10px;">Niveau : {{niveau}}</h4>
+        </div>
+        <div style="margin-left: 40px; margin-top: -150px; float: left; text-align: left;">
+            <h2>{{name}}</h2>
+            <h4>Non classé</h4>
+            <h4>Lane favorite : {{lanePrefere}}</h4>
+            <h4>Score moyen : {{kill}} / {{death}} / {{assist}}</h4>
+        </div> 
     </div>
 </div>
 <div class="card mb-4" id="rotation-character">

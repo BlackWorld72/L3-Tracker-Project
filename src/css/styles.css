@@ -4326,10 +4326,13 @@ input[type=button].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #212529;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  color: #e4e4e4;
+  text-align: center;
+  font-size: 20px;
 }
 .card > hr {
   margin-right: 0;
@@ -4358,6 +4361,7 @@ input[type=button].btn-block {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+  background-color: #e4e4e4;
 }
 
 .card-title {
@@ -6150,7 +6154,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #212529 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -10285,14 +10289,14 @@ body {
 .search-link {
   position: relative;
   line-height: 40px;
-  width: 80px;
+  width: 75px;
   text-decoration: none;
   background: #1f6fba;
   color: #fff;
   float: right;
   font-size: 16px;
   text-align: center;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 10px;
   margin-left: 15px;
 }
 
@@ -10315,8 +10319,7 @@ body {
   display: inline-block;
   border-radius: 20px;
   top: 150px;
-  margin-left: auto;
-  margin-right: auto;
+  left: 23%;
   background-color: #212529;
 }
 
@@ -10334,8 +10337,53 @@ body {
   border-radius: 30px;
 }
 
+.tweet {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border-radius: 20px;
+  background-color: #e4e4e4;
+  color: #000;
+}
+
+blockquote.twitter-tweet {
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 0 16px 16px 16px;
+  max-width: 468px;
+}
+
+blockquote.twitter-tweet p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+blockquote.twitter-tweet a {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+  text-decoration: underline;
+}
+
 @font-face {
   font-family: dnFont;
+  color: #e4e4e4;
   src: url(../CloisterBlack.ttf);
 }
 

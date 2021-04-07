@@ -2,7 +2,17 @@
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
-                <div class="sb-sidenav-menu-heading" id="header-tweets">League Of Legends Tweets</div>  
+                <div class="sb-sidenav-menu-heading" id="header-tweets">
+                    <h5 style="color: #e4e4e4"><img style="width: 30px;" src="../../../../assets/logo-twitter.png">    League Of Legends Tweets    <img style="width: 30px;" src="../../../../assets/logo-twitter.png"></h5>
+                    
+                </div>  
+            </div>
+            <div *ngFor="let t of lolTweets">
+                <div class="tweet">
+                    <br>
+                    <div style="margin-left: 20px; margin-right: 20px;">{{t.text}}</div>
+                    <br>
+                </div>
             </div>
         </div>  
     </nav>
