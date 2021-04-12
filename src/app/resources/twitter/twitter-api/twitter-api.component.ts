@@ -31,7 +31,7 @@ export class TwitterApiComponent implements OnInit {
    * Permet de récupéré l'ID twitter du compte @LeagueOfLegends
    */
   getLoLID(): void {
-    this.http.get<any>("https://api.twitter.com/2/users/by/username/LeagueOfLegends", httpHeader).pipe(map((value: UserDataByUsername) => { return value})).subscribe((res: UserDataByUsername) => {
+    this.http.get<any>("https://cors-anywhere.herokuapp.com/" + "https://api.twitter.com/2/users/by/username/LeagueOfLegends", httpHeader).pipe(map((value: UserDataByUsername) => { return value})).subscribe((res: UserDataByUsername) => {
       this.lolUser = res.data
       this.lolUserId = res.data.id
       this.getLoLTweets(res.data.id)
@@ -43,7 +43,7 @@ export class TwitterApiComponent implements OnInit {
    * @param id 
    */
   getLoLTweets(id: string): void {
-    this.http.get<any>("https://api.twitter.com/2/users/" + this.lolUserId + "/tweets?max_results=6", httpHeader).pipe(map((value: TweetByUserID) => { return value})).subscribe((res: TweetByUserID) => {
+    this.http.get<any>("https://cors-anywhere.herokuapp.com/" + "https://api.twitter.com/2/users/" + this.lolUserId + "/tweets?max_results=15", httpHeader).pipe(map((value: TweetByUserID) => { return value})).subscribe((res: TweetByUserID) => {
       this.lolTweets = res.data
     })
   }

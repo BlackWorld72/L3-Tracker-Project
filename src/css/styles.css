@@ -10363,23 +10363,6 @@ blockquote.twitter-tweet {
   max-width: 468px;
 }
 
-blockquote.twitter-tweet p {
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 20px;
-}
-
-blockquote.twitter-tweet a {
-  color: inherit;
-  font-weight: normal;
-  text-decoration: none;
-  outline: 0 none;
-}
-
-blockquote.twitter-tweet a:hover,
-blockquote.twitter-tweet a:focus {
-  text-decoration: underline;
-}
 
 @font-face {
   font-family: dnFont;
@@ -10387,11 +10370,21 @@ blockquote.twitter-tweet a:focus {
   src: url(../CloisterBlack.ttf);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
   #layoutSidenav_nav {
     visibility: hidden;
   }
   #rotation-character {
     visibility: hidden;
+  }
+  #barreRecherche {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    top: 150px;
+    left: auto;
+    right: auto;
+    width: 100%;
+    background-color: #212529;
   }
 }

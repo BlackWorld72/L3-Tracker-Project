@@ -63,7 +63,7 @@ export class RiotApiComponent implements OnInit {
    * @returns 
    */
   getMatches(uaID: string) {
-    this.http.get<any>("https://" + this.region + apiBaseUrl + "match/v4/matchlists/by-account/" + uaID + "?endIndex=5&", httpHeader).pipe( map((value: LoLMatches) => { return value})).subscribe((res: LoLMatches) => {
+    this.http.get<any>("https://cors-anywhere.herokuapp.com/" + "https://" + this.region + apiBaseUrl + "match/v4/matchlists/by-account/" + uaID + "?endIndex=5&", httpHeader).pipe( map((value: LoLMatches) => { return value})).subscribe((res: LoLMatches) => {
       this.calcMatches(res.matches)
     })
   }
@@ -82,7 +82,7 @@ export class RiotApiComponent implements OnInit {
 
     for (var i in matches) {
       p++
-      this.http.get<any>("https://" + this.region + apiBaseUrl + "match/v4/matches/" + matches[i].gameId, httpHeader).pipe( map((value: MatchDto) => { return value})).subscribe((res: MatchDto) => { 
+      this.http.get<any>("https://cors-anywhere.herokuapp.com/" + "https://" + this.region + apiBaseUrl + "match/v4/matches/" + matches[i].gameId, httpHeader).pipe( map((value: MatchDto) => { return value})).subscribe((res: MatchDto) => { 
         for (let k = 0 ; k < 10 ; k++) {
           if (res.participantIdentities[k].player.accountId == this.userAccountID) {
             index = k
@@ -97,7 +97,6 @@ export class RiotApiComponent implements OnInit {
           this.assist = assist/5
         }
       })
-      console.log("Kill = " + kill)
       switch(matches[i].lane) {
         case "BOTTOM":
           pos[0]++
@@ -174,7 +173,7 @@ export class RiotApiComponent implements OnInit {
     if (this.userID == '') {
       return;
     }
-    this.http.get<any>("https://" + this.region + apiBaseUrl +  "league/v4/entries/by-summoner/" + userID, httpHeader).pipe( map((value: LoLRank[]) => { return value})).subscribe((res: LoLRank[]) => {
+    this.http.get<any>("https://cors-anywhere.herokuapp.com/" + "https://" + this.region + apiBaseUrl +  "league/v4/entries/by-summoner/" + userID, httpHeader).pipe( map((value: LoLRank[]) => { return value})).subscribe((res: LoLRank[]) => {
       if (res.length >= 1) {
         this.rank = res[0]
         this.isUnrank = false
@@ -246,14 +245,14 @@ export class RiotApiComponent implements OnInit {
     if (name == '') {
       return null 
     }
-    return this.http.get<any>("https://" + this.region + apiBaseUrl + "summoner/v4/summoners/by-name/" + name, httpHeader).pipe(map((value: LolSummoners) => {return value}))
+    return this.http.get<any>("https://cors-anywhere.herokuapp.com/" + "https://" + this.region + apiBaseUrl + "summoner/v4/summoners/by-name/" + name, httpHeader).pipe(map((value: LolSummoners) => {return value}))
   }
 
   /**
    * Permet de récupéré les champions de rotation
    */
   getRotation(): void {
-    this.http.get<any>("https://euw1" + apiBaseUrl + "platform/v3/champion-rotations", httpHeader).pipe( map((value: LolRotation) => { return value})).subscribe((res: LolRotation) => {
+    this.http.get<any>("https://cors-anywhere.herokuapp.com/" + "https://euw1" + apiBaseUrl + "platform/v3/champion-rotations", httpHeader).pipe( map((value: LolRotation) => { return value})).subscribe((res: LolRotation) => {
       this.rota = res
     })
   }
